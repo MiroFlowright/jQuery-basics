@@ -1,0 +1,85 @@
+.mainbox {
+    border: 5px solid #333;
+    padding: 15px;
+}
+.mainbox h1 {
+    border: 5px solid #333;
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+}
+body {
+    font-family: Verdana, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+.demo-box {
+    border: 2px solid #333;
+    padding: 15px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    flex: 1;
+    min-width: 250px;
+}
+.demo-box h2 {
+    border-top: none;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333; 
+    border-left: none;         
+    background-color: #f8f2f2;     
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -15px;         
+    margin-bottom: 15px;           
+    text-align: center;           
+    border-radius: 0px 0px 15px 0px; 
+}
+#Target {
+    margin: 5px;
+    width: 200px;        
+    height: 100px;     
+    overflow-y: auto;    /
+    border: 0.5px solid #a09f9f; 
+    padding: 5px;        
+    background-color: #fff;
+}
+.number-box {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #666;
+    margin: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.highlight {
+    background-color: rgb(133, 225, 241);
+    transform: scale(1.1);
+    border-radius: 5px solid #ffffff;
+}
+#colorSelect {
+    margin: 5px;
+    padding: 8px 15px;
+}
+.button-section button {
+    margin: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+.button-section button {
+    margin: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+
+}        

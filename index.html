@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mainbox">
+    <h1>jQuery Examples</h1>
+
+
+    <div class="container">
+    <div class="demo-box">
+        <h2>Selection Demonstration</h2>
+        <div class="button-section">
+            <button id="selectAll">Select All Boxes</button>
+            <button id="selectNone">Clear Selection</button>
+        </div>
+        <div id="numberContainer">
+            <div class="number-box" data-number="1">1</div>
+            <div class="number-box" data-number="2">2</div>
+            <div class="number-box" data-number="3">3</div>
+            <div class="number-box" data-number="4">4</div>
+        </div>
+    </div>
+
+
+    <div class="demo-box">
+        <h2>DOM Manipulation</h2>
+        <div class="button-section">
+            <button id="addElement">Add Element</button>
+            <button id="removeElement">Remove Last Element</button>
+            <button id="toggleElements">Toggle Elements</button>
+        </div>
+        <div id="Target"></div>
+    </div>
+
+    <div class="demo-box">
+        <h2>Event Handling Demonstration</h2>
+        <div class="button-section">
+            <button id="displayWarning">Display Warning</button>
+        </div>
+        <p>Set background color:</p>
+        <select id="colorSelect">
+            <option value="#f0f0f0">Default</option>
+            <option value="#be7f7f">Red</option>
+            <option value="#5a80c7">Blue</option>
+            <option value="#5ac77e">Green</option>
+        </select>
+        <p id="clickCounter">Warnings displayed: 0</p>
+    </div>
+    </div>
+</div>
+
+    <script>
+        //document ready check and box selection function
+            $(document).ready(function() {
+                $('.number-box').click(function() {
+                    $(this).toggleClass('highlight');
+                });
+
+                $('#selectAll').click(function() {
+                    $('.number-box').addClass('highlight');
+                });
+
+                $('#selectNone').click(function() {
+                    $('.number-box').removeClass('highlight');
+                });
+
+            });
+
+            //DOM manipulation function
+            let eNum = 0;
+            $('#addElement').click(function() {
+                eNum++;
+                $('#Target').append(
+                    `<p class="added-element">Element ${eNum}</p>`
+                );
+            });
+
+            $('#removeElement').click(function() {
+                $('#Target p:last-child').remove();
+                if (eNum > 0) eNum--;
+            });
+
+            $('#toggleElements').click(function() {
+                $('.added-element').slideToggle();
+            });
+
+            // event handling function
+            let clickCount = 0;
+
+            $('#displayWarning').click(function() {
+                clickCount++;
+                alert('This is a warning message!');
+
+            $('#clickCounter').text('Warnings displayed: ' + clickCount);
+            });
+
+            $('#colorSelect').change(function() {
+                let color = $(this).val();
+                $('.demo-box').css('background-color', color);
+            });
+    </script>
+</body>
+</html>
